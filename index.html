@@ -4,6 +4,77 @@
   <title>Login / Signup</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="templates/style.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
+      font-family: 'Courier New', Courier, monospace;
+      color: #e0e7ff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      background: rgba(40, 40, 70, 0.95);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow:
+        0 0 30px 5px rgba(130, 207, 255, 0.7),
+        inset 0 0 30px 5px rgba(255, 255, 255, 0.15);
+      border: 2px solid #82cfff;
+      width: 360px;
+      text-align: center;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 90%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 2px solid #82cfff;
+      background: #122244;
+      color: #e0e7ff;
+      font-size: 17px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #ffd700;
+      outline: none;
+      background: #1a2a55;
+    }
+
+    button {
+      margin-top: 18px;
+      padding: 12px 30px;
+      background-color: #82cfff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
+
+    .switch-link {
+      margin-top: 18px;
+      font-size: 15px;
+      color: #82cfff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
   <script>
     function toggleForm() {
       const loginForm = document.getElementById('login-form');
@@ -55,3 +126,4 @@
   </div>
 </body>
 </html>
+
