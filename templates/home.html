@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home - Cosmic Corner</title>
+  <title>Home - Space Theme</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Redirect to login if not logged in
+    if (localStorage.getItem('loggedIn') !== 'true') {
+      window.location.href = '../index.html';
+    }
+  </script>
 </head>
 <body>
   <div class="container">
-    <h1>🌌 Welcome to My Cosmic Corner</h1>
-    <p>Exploring the universe one line of code at a time.</p>
-    <p>Contact me at https://discord.gg/CdHT8GJ5dT</a></p>
-    <p><a href="../index.html">Logout</a></p>
+    <h1>Welcome to the Space Themed Home Page!</h1>
+    <p>This is your home after logging in or signing up.</p>
+    <p><a href="https://discord.gg/CdHT8GJ5dT" target="_blank" rel="noopener noreferrer">Join our Discord</a></p>
+    <p><a href="#" onclick="logout()">Logout</a></p>
   </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem('loggedIn');
+      window.location.href = '../index.html';
+    }
+  </script>
 </body>
 </html>
