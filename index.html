@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to My Space Site</title>
+  <title>Login / Signup</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="templates/style.css" />
+  <style>
+    /* Extra styles for form layout */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
+      font-family: 'Courier New', Courier, monospace;
+      color: #e0e7ff;
+      margin: 0;
+      padding: 0;
+    }
+    .login-container {
+      background: rgba(10, 10, 30, 0.95);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #3050f0, 0 0 40px #6080ff;
+      border: 1px solid #4060d0;
+      width: 320px;
+      text-align: center;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #4060d0;
+      background: #0a0a1e;
+      color: #e0e7ff;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background-color: #82cfff;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #ffd700;
+      color: #000;
+    }
+    .switch-link {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #82cfff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    // Simple toggle between Login and Signup forms
+    function toggleForm() {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+      } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'block';
+      }
+    }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>🌌 Welcome to My Cosmic Corner</h1>
-    <p>Exploring the universe one line of code at a time.</p>
-    <p>Contact me at <a href="mailto:your@email.com">your@email.com</a></p>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <form id="signup-form" style="display:none;">
+      <input type="text" placeholder="Username" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="switch-link" onclick="toggleForm()">Switch to Sign Up / Login</div>
   </div>
 </body>
 </html>
+
 
