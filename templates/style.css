@@ -1,28 +1,47 @@
-/* templates/style.css - Space Theme */
+/* style.css */
 
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
-  color: #e0e7ff;
   margin: 0;
-  padding: 40px 20px;
+  padding: 0;
+  background: radial-gradient(ellipse at center, #000014 0%, #000000 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #cfdfff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  background-image: 
-    radial-gradient(2px 2px at 20% 30%, #ffffff 90%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 80% 60%, #ccccff 90%, transparent 100%),
-    radial-gradient(1.8px 1.8px at 50% 80%, #aaaaff 90%, transparent 100%);
-  background-repeat: repeat;
-  background-size: 100px 100px;
+  text-align: center;
 }
 
-h1, h2, h3 {
-  color: #a0c8ff;
-  text-shadow: 0 0 8px #8ab4f8;
+.container {
+  background: rgba(15, 20, 40, 0.85);
+  padding: 50px 60px;
+  border-radius: 20px;
+  box-shadow:
+    0 0 40px 5px rgba(100, 140, 255, 0.6),
+    inset 0 0 40px 5px rgba(200, 230, 255, 0.2);
+  max-width: 480px;
+  width: 90%;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px #82cfff, 0 0 30px #a0c8ff;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 12px 0;
+  color: #d1d9ff;
 }
 
 a {
   color: #82cfff;
   text-decoration: none;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -31,18 +50,16 @@ a:hover {
   text-shadow: 0 0 10px #ffd700;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: rgba(10, 10, 30, 0.85);
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #3050f0, 0 0 40px #6080ff;
-  border: 1px solid #4060d0;
-}
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+  }
 
-p {
-  line-height: 1.6;
-  font-size: 18px;
-}
+  h1 {
+    font-size: 2.2rem;
+  }
 
+  p {
+    font-size: 1rem;
+  }
+}
