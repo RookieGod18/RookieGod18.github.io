@@ -1,11 +1,10 @@
-/* style.css */
-
+/* General body styles */
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(ellipse at center, #000014 0%, #000000 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #cfdfff;
+  font-family: 'Courier New', Courier, monospace;
+  background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
+  color: #e0e7ff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +12,69 @@ body {
   text-align: center;
 }
 
+/* Container for login/signup */
+.login-container {
+  background: rgba(40, 40, 70, 0.95);
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow:
+    0 0 30px 5px rgba(130, 207, 255, 0.7),
+    inset 0 0 30px 5px rgba(255, 255, 255, 0.15);
+  border: 2px solid #82cfff;
+  width: 360px;
+  text-align: center;
+}
+
+/* Inputs styles */
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 90%;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 2px solid #82cfff;
+  background: #122244;
+  color: #e0e7ff;
+  font-size: 17px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #ffd700;
+  outline: none;
+  background: #1a2a55;
+}
+
+/* Buttons */
+button {
+  margin-top: 18px;
+  padding: 12px 30px;
+  background-color: #82cfff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+/* Link to switch between forms */
+.switch-link {
+  margin-top: 18px;
+  font-size: 15px;
+  color: #82cfff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Home page container */
 .container {
   background: rgba(15, 20, 40, 0.85);
   padding: 50px 60px;
@@ -23,14 +85,18 @@ body {
   max-width: 480px;
   width: 90%;
   backdrop-filter: blur(8px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #cfdfff;
 }
 
+/* Home page headings */
 h1 {
   font-size: 3rem;
   margin-bottom: 15px;
   text-shadow: 0 0 15px #82cfff, 0 0 30px #a0c8ff;
 }
 
+/* Home page paragraphs */
 p {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -38,6 +104,7 @@ p {
   color: #d1d9ff;
 }
 
+/* Links on home page */
 a {
   color: #82cfff;
   text-decoration: none;
@@ -50,15 +117,18 @@ a:hover {
   text-shadow: 0 0 10px #ffd700;
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
+  .login-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
   .container {
     padding: 30px 20px;
   }
-
   h1 {
     font-size: 2.2rem;
   }
-
   p {
     font-size: 1rem;
   }
