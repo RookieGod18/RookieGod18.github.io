@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="templates/style.css" />
   <style>
-    /* Extra styles for form layout */
     body {
       display: flex;
       justify-content: center;
@@ -17,56 +16,71 @@
       margin: 0;
       padding: 0;
     }
+
     .login-container {
-      background: rgba(10, 10, 30, 0.95);
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #3050f0, 0 0 40px #6080ff;
-      border: 1px solid #4060d0;
-      width: 320px;
+      background: rgba(40, 40, 70, 0.95);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow:
+        0 0 30px 5px rgba(130, 207, 255, 0.7),
+        inset 0 0 30px 5px rgba(255, 255, 255, 0.15);
+      border: 2px solid #82cfff;
+      width: 360px;
       text-align: center;
     }
+
     input[type="text"], input[type="email"], input[type="password"] {
       width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #4060d0;
-      background: #0a0a1e;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 2px solid #82cfff;
+      background: #122244;
       color: #e0e7ff;
-      font-size: 16px;
+      font-size: 17px;
+      transition: border-color 0.3s ease;
     }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #ffd700;
+      outline: none;
+      background: #1a2a55;
+    }
+
     button {
-      margin-top: 15px;
-      padding: 10px 25px;
+      margin-top: 18px;
+      padding: 12px 30px;
       background-color: #82cfff;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
       color: #000;
-      font-size: 16px;
+      font-size: 18px;
       transition: background-color 0.3s ease;
     }
+
     button:hover {
       background-color: #ffd700;
       color: #000;
     }
+
     .switch-link {
-      margin-top: 15px;
-      font-size: 14px;
+      margin-top: 18px;
+      font-size: 15px;
       color: #82cfff;
       cursor: pointer;
       text-decoration: underline;
     }
   </style>
   <script>
-    // Toggle between Login and Signup forms and update heading text
     function toggleForm() {
       const loginForm = document.getElementById('login-form');
       const signupForm = document.getElementById('signup-form');
       const heading = document.getElementById('form-heading');
-      
+
       if (loginForm.style.display === 'none') {
         loginForm.style.display = 'block';
         signupForm.style.display = 'none';
@@ -77,6 +91,17 @@
         heading.textContent = 'Sign Up';
       }
     }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      // Simulate login/signup success, redirect to home page
+      window.location.href = 'templates/home.html';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('login-form').addEventListener('submit', handleSubmit);
+      document.getElementById('signup-form').addEventListener('submit', handleSubmit);
+    });
   </script>
 </head>
 <body>
@@ -99,3 +124,4 @@
   </div>
 </body>
 </html>
+
